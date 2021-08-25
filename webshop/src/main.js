@@ -38,16 +38,16 @@ Vue.config.productionTip = false
 let baseApp
 
 
-Firebase.auth().onAuthStateChanged(() => {
-    if (!baseApp) {
 
+FirebaseApp.auth().onAuthStateChanged(() => {
+    /* eslint-disable no-new */
+    if (!baseApp) {
         baseApp = new Vue({
             el: '#app',
             router,
             components: { App },
             template: '<App/>'
         })
-
     }
 })
 
