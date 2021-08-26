@@ -37,5 +37,8 @@ export default {
     },
     get_products() {
         return Firestore.collection('products').get()
+    },
+    get_product(id) {
+        return Firestore.collection('products').doc(id).get()
     }
 }
